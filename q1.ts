@@ -1,15 +1,23 @@
+//รหัส นศ.: 660610799
+//ชื่อ-สกุล : นายศุภฤกษ์ เขื่อนเพชร
 // define interface for Hero and Shop objects
 interface Hero {
-  /* Your code here */
+  items:string[];
+  gold:number;
 }
 
 interface Shop {
-  /* Your code here */
+  item:string;
+  price:number;
 }
 
 // assign interface/type to the function definition properly
-function buyItem(hero, shop) {
-  /* Your code here */
+function buyItem(Hero, Shop) {
+  if(Hero.gold>=Shop.price){
+    Hero.items.push(Shop.item);
+    Hero.gold-=Shop.price;
+  }
+  return Hero;
 }
 
 //Test cases : assign proper type/interface to all objects
